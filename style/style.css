@@ -66,19 +66,3 @@ def app():
 
     local_css("style/style.css")
     
-        
-    # Inline CSS
-    st.markdown(""" 
-                <style> 
-                .form{
-                    display: flex;
-                    justify-content: flex-start;
-                    align-items: flex-start;
-                }
-                .lottie{
-                    display: flex;
-                    justify-content: flex-end;
-                    align-items: flex-end;
-                }
-                </style> 
-                """, unsafe_allow_html=True)
