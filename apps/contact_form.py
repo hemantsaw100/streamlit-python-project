@@ -34,7 +34,6 @@ def app():
     ) 
 
 
-
     contact_form = """
     <form action="https://formsubmit.co/sawhemant41@gmail.com" method="POST">
         <input type="hidden" name="_captcha" value="false">
