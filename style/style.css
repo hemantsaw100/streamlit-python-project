@@ -6,6 +6,14 @@ from streamlit_lottie import st_lottie
 def app():    
     st.header(":mailbox: Get In Touch With Me!")
 
+
+    # Use Local CSS File
+    def local_css(file_name):
+        with open(file_name) as f:
+            st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+
+    local_css("style/style.css")
+
     # Local lottie file 
     def load_lottiefile(filepath: str):
         with open(filepath, "r") as f:
@@ -59,10 +67,4 @@ def app():
         key=None,
     ) 
 
-    # Use Local CSS File
-    def local_css(file_name):
-        with open(file_name) as f:
-            st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
-
-    local_css("style/style.css")
     
