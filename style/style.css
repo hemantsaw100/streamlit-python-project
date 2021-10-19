@@ -1,69 +1,26 @@
-import json
-import requests  
-import streamlit as st  
-from streamlit_lottie import st_lottie  
-
-def app():    
-    st.header(":mailbox: Get In Touch With Me!")
-
-
-    # Local lottie file 
-    def load_lottiefile(filepath: str):
-        with open(filepath, "r") as f:
-            return json.load(f)
-
-    # URL lottie 
-    def load_lottieurl(url: str):
-        r = requests.get(url)
-        if r.status_code != 200:
-            return None
-        return r.json()
-
-    # lottie_coding = load_lottiefile("lottiefile.json")  # replace link to local lottie file
-    lottie_hello = load_lottieurl("https://assets2.lottiefiles.com/packages/lf20_9wjm14ni.json")
-
-    st_lottie(
-        lottie_hello,
-        speed=1,
-        reverse=False,
-        loop=True,
-        quality="high", # medium ; high
-        renderer="svg", # canvas
-        height=400,
-        width=700,
-        key=None,
-    ) 
-
-
-    contact_form = """
-    <form action="https://formsubmit.co/sawhemant41@gmail.com" method="POST">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="text" name="name" placeholder="Your name" required>
-        <input type="email" name="email" placeholder="Your email" required>
-        <textarea name="message" placeholder="Your message here"></textarea>
-        <button type="submit">Send</button>
-    </form>
-    """
-
-    st.markdown(contact_form, unsafe_allow_html=True)
-    
-    lottie_thank_you = load_lottieurl("https://assets9.lottiefiles.com/packages/lf20_aldqqeyg.json") 
-    st_lottie(
-        lottie_thank_you,
-        speed=1,
-        reverse=False,
-        loop=True,
-        quality="high", # medium ; high
-        renderer="svg", # canvas
-        height=100,
-        width=700,
-        key=None,
-    ) 
-
-    # Use Local CSS File
-    def local_css(file_name):
-        with open(file_name) as fread:
-            st.markdown(f"<style>{fread.read()}</style>", unsafe_allow_html=True)
-
-    local_css("style/style.css")
-    
+/* Style inputs with type="text", type="email"and textareas */
+input[type=text], input[type=email], textarea {
+    width: 100%; /* Full width */
+    padding: 12px; /* Some padding */ 
+    border: 1px solid #ccc; /* Gray border */
+    border-radius: 4px; /* Rounded borders */
+    box-sizing: border-box; /* Make sure that padding and width stays in place */
+    margin-top: 6px; /* Add a top margin */
+    margin-bottom: 16px; /* Bottom margin */
+    resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+  }
+  
+  /* Style the submit button with a specific background color etc */
+  button[type=submit] {
+    background-color: #04AA6D;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  /* When moving the mouse over the submit button, add a darker green color */
+  button[type=submit]:hover {
+    background-color: #45a049;
+  }
