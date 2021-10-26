@@ -174,8 +174,3 @@ def app():
     width=700,
     key=None,
   )
-  
-  
-  ####
-  #st.write('---')
-  #st.write(tickerData.info)
