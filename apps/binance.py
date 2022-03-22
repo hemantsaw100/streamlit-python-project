@@ -18,7 +18,7 @@ def app():
     
     st.markdown("____")    
 
-    st.markdown('''# ** ₿ Binance Price App ₿**
+    st.markdown('''# ₿ Binance Price App ₿
     ''')
     
     st.write('💎 A Simple Cryptocurrency price app pulling price data from Binance API')

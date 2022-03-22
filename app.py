@@ -1,14 +1,7 @@
 import streamlit as st
 from multiapp import MultiApp
 from apps import stockwatchlist, binance, contact_form  # import your app modules here
-# from PIL import Image # Media access library
-# img = Image.open("hemant_dp.png") # Create var img to store img inside it
-# st.image(img, width=None) # Display the image
 
-# st.markdown("""
-# # Streamlit
-# This is my final year Project
-# """)
 
 hide_st_style = """
             <style>

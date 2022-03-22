@@ -42,7 +42,7 @@ def app():
   start_date = st.sidebar.date_input("Start date 📆", datetime.date(2015, 1, 1))
   end_date = st.sidebar.date_input("End date 📆", datetime.date(2021, 8, 31))
   
-
+  
   # Retrieving tickers data
   ticker_list = pd.read_csv('https://raw.githubusercontent.com/dataprofessor/s-and-p-500-companies/master/data/constituents_symbols.txt')
   tickerSymbol = st.sidebar.selectbox('Stock ticker ⌛', ticker_list) # Select ticker symbol
@@ -78,7 +78,6 @@ def app():
   website_name = tickerData.info['website']
   st.write('💻 Website: **%s**' % website_name)
 
-  # st.write(tickerData.info)
 
   string_summary = tickerData.info['longBusinessSummary']
   st.subheader('🔥 About Company:')
@@ -159,7 +158,7 @@ def app():
     st_lottie(lottie_github, height=25, key="github")
   with connect_link:
     st.write("[Github](https://github.com/hemantsaw100)")
-
+  
   
   # lottie End Of Line 
   lottie_endline = load_lottieurl("https://assets4.lottiefiles.com/packages/lf20_vf7vzf32.json")
@@ -174,3 +173,6 @@ def app():
     width=700,
     key=None,
   )
+
+# It will display all the data
+  # st.write(tickerData.info)
